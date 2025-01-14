@@ -1,3 +1,6 @@
+# ignore JetBrains temporary files
+.idea/
+
 # ignore ALL .log files
 *.log
 *__pycache__*
@@ -6,5 +9,3 @@
 # ignore ALL files in ANY directory named temp
 temp/ 
 code/logs
-code/experiments/logs
-code/messageClient/logs
