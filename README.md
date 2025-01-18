@@ -19,20 +19,27 @@ The project adheres to the guidelines set by the course to ensure reproducibilit
 AIBAS-student-performance-predictor/ 
 
     ├── code/
-            ├── data_processing/ # Scripts and notebooks for Exploratory Data Analysis (EDA), data scraping, and cleaning
-            ├── models/ # AI and OLS training and testing scripts │ 
-            ├── docker/ # Docker files for building and running containers │ 
-            ├── visualizations/ # Scripts for creating plots and metrics 
+            ├── data_pipeline/ # Master notebook and singular scripts for data scraping, preprocessing and splitting
+            ├── models/ # AI and OLS training and testing scripts    
+            ├── utils/ # Additional useful utility functions  
             
     ├── data/
-            ├── raw/ # Raw dataset
-            ├── processed/ # Scraped, cleaned, and prepared datasets 
+            ├── raw/ # Raw and scraoed datasets
+            ├── processed/ # Cleaned and prepared datasets 
             
     ├── docs/ # Reports and other relevant documentation 
     
-    ├── images/ # Docker images for deployment 
+    ├── docker/
+            ├── dockerfiles/ # Docker files for dockerization
+            ├── images/ # Docker image folders for deployment
+                      ├── activationBase/
+                      ├── knowledgeBase/
+                      ├── learningBase/
     
     ├── results/ # Generated plots, trained models, and performance metrics
+            ├── plots/ # Generated plots
+            ├── reports/ # Reports with model performance metrics
+            ├── trained_models/ # Trained OLS and AI models
 ```
 
 ## Dataset
@@ -42,7 +49,7 @@ This dataset contains synthetically generated student records with features like
 ## How to Use
 1. Clone this repository: `git clone https://github.com/il1a/student-performance-predictor`
 2. Navigate to the project directory: `cd student-performance-predictor`
-3. Install dependencies: `pip install -r requirements.txt`<br>
+3. Install dependencies: `pip install -r requirements.txt`<br><br>
    The rest of the steps is **coming soon** ...
 
 ## Licensing

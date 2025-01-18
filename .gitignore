@@ -1,5 +1,6 @@
 # ignore JetBrains temporary files
 .idea/
+.DS_Store
 
 # ignore ALL .log files
 *.log
