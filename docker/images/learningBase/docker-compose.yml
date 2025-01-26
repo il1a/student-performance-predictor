@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  learningBase:
+    image: learningbase_student-performance-predictor:latest
+    container_name: learningBase_container
+    volumes:
+      - ai_system:/tmp
+volumes:
+  ai_system:
+    external: true
