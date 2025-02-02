@@ -1,0 +1,26 @@
+version: "3.0"
+services:
+  knowledge_base:
+    image: knowledgebase_student-performance-predictor:latest
+    volumes:
+      - ai_system:/tmp
+    restart: always
+
+  activation_base:
+    image: activationbase_student-performance-predictor:latest
+    volumes:
+      - ai_system:/tmp
+    restart: always
+
+  code_base:
+    image: codebase_student-performance-predictor:latest
+    volumes:
+      - ai_system:/tmp
+    depends_on:
+      - knowledge_base
+      - activation_base
+    restart: always
+
+volumes:
+  ai_system:
+    external: true

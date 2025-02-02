@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  activationBase:
+    build:
+      context: ../../../
+      dockerfile: docker/images/knowledgeBase/Dockerfile
+    image: knowledgebase_student-performance-predictor:latest
+    container_name: knowledgeBase_container
+    volumes:
+      - ai_system:/tmp # Shared volume
+
+volumes:
+  ai_system:
+    external: true
