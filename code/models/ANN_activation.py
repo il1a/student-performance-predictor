@@ -4,6 +4,7 @@ ANN Activation Inference Script
 
 Loads the trained TensorFlow ANN model (currentAiSolution.keras) and
 reads a single-entry activation_data.csv to produce a prediction.
+Also prints the actual target value for easy comparison.
 """
 
 import os
@@ -34,12 +35,18 @@ def main():
     target_col = "Exam_Score"
     if target_col in activation_df.columns:
         X_activation = activation_df.drop(columns=[target_col]).values
+        y_actual = activation_df[target_col].values  # Extract the actual target values
     else:
         X_activation = activation_df.values
+        y_actual = None
 
     # 4. Make Prediction
     y_pred_ANN = ann_model.predict(X_activation).flatten()
     print("ANN Predictions for Activation Data:\n", y_pred_ANN)
+
+    # 5. Print Actual Values (if available)
+    if y_actual is not None:
+        print("Actual Exam_Score values:\n", y_actual)
 
 if __name__ == "__main__":
     main()
