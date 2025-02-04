@@ -1,13 +1,12 @@
+# File: docker/images/knowledgeBase/Dockerfile
 FROM busybox
 
 # Create necessary directory
-RUN mkdir -p /tmp/knowledgeBase
+RUN mkdir -p /knowledgeBase
 
-COPY ann_training_metrics.csv /tmp/knowledgeBase/
-COPY currentAiSolution.keras /tmp/knowledgeBase/
-COPY currentOlsSolution.pkl /tmp/knowledgeBase/
-COPY ols_model_summary.txt /tmp/knowledgeBase/
+COPY results/trained_models/ann_training_metrics.csv /knowledgeBase/
+COPY results/trained_models/currentAiSolution.keras /knowledgeBase/
+COPY results/trained_models/currentOlsSolution.pkl /knowledgeBase/
+COPY results/trained_models/ols_model_summary.txt /knowledgeBase/
 
-COPY docker/README.md /tmp/knowledgeBase/
-
-CMD ["sh", "-c", "echo 'knowledgeBase_student-performance-predictor image is ready.' && tail -f /dev/null"]
+COPY docker/README.md /knowledgeBase/

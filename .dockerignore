@@ -1,0 +1,25 @@
+# ignore any Git related files
+.git
+
+# ignore any JetBrains temporary files
+.idea/
+.DS_Store
+
+# ignore any .log files
+*.log
+*__pycache__*
+*.pyc
+
+# ignore any temporary files
+temp/
+tmp/
+code/logs
+
+# ignore directories irrelevant to docker
+plots/
+reports/
+scenarios/
+raw/
+data_pipeline/
+utils/
+docs/

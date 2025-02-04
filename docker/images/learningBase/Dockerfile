@@ -1,10 +1,9 @@
+# File: docker/images/learningBase/Dockerfile
 FROM busybox
 
-RUN mkdir -p /tmp/learningBase/train /tmp/learningBase/validation
+RUN mkdir -p /learningBase/train /learningBase/validation
 
-COPY data/processed/training_data.csv /tmp/learningBase/train/
-COPY data/processed/test_data.csv /tmp/learningBase/validation/
+COPY data/processed/training_data.csv /learningBase/train/
+COPY data/processed/test_data.csv /learningBase/validation/
 
-COPY docker/README.md /tmp/learningBase/
-
-CMD ["sh", "-c", "echo 'learningbase_student-performance-predictor image is ready.' && tail -f /dev/null"]
+COPY docker/README.md /learningBase/

@@ -1,0 +1,49 @@
+# File: scenarios/ANN/docker-compose-ann.yml
+services:
+  learning_base:
+    image: ilia-elisa/learning_base_student-performance-predictor:latest
+    volumes:
+      - ai_system:/tmp
+    command:
+      - /bin/sh
+      - "-c"
+      - |
+        rm -rf /tmp/learningBase/ && cp -r /learningBase/ /tmp/;
+
+  knowledge_base:
+    image: ilia-elisa/knowledge_base_student-performance-predictor:latest
+    volumes:
+      - ai_system:/tmp
+    command:
+      - /bin/sh
+      - "-c"
+      - |
+        rm -rf /tmp/knowledgeBase/ && cp -r /knowledgeBase/ /tmp/;
+
+  activation_base:
+    image: ilia-elisa/activation_base_student-performance-predictor:latest
+    volumes:
+      - ai_system:/tmp
+    command:
+      - /bin/sh
+      - "-c"
+      - |
+        rm -rf /tmp/activationBase/ && cp -r /activationBase/ /tmp/;
+
+  code_base:
+    image: ilia-elisa/code_base_student-performance-predictor:latest
+    volumes:
+      - ai_system:/tmp
+    depends_on:
+      - knowledge_base
+      - activation_base
+    command:
+      - /bin/sh
+      - "-c"
+      - |
+        rm -rf /tmp/codeBase/ && cp -r /codeBase/ /tmp/;
+        python3 /tmp/codeBase/ANN_activation.py;
+        tail -f /dev/null
+volumes:
+  ai_system:
+    external: true

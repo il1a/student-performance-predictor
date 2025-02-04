@@ -1,14 +1,13 @@
+# File: docker/images/codeBase/Dockerfile
 FROM tensorflow/tensorflow
 
 RUN apt-get update && apt-get install -y python3 python3-pip
-RUN pip3 install matplotlib pandas numpy seaborn scikit-learn statsmodels
+RUN pip3 install pandas statsmodels
 
 # Create necessary directory
-RUN mkdir -p /tmp/codeBase
+RUN mkdir -p /codeBase
 
-COPY ./code/models/ANN.py /tmp/codeBase/
-COPY ./code/models/OLS.py /tmp/codeBase/
+COPY code/models/ANN_activation.py /codeBase/
+COPY code/models/OLS_activation.py /codeBase/
 
-COPY docker/README.md /tmp/codeBase/
-
-CMD ["sh", "-c", "echo 'codeBase_student-performance-predictor image is ready.' && tail -f /dev/null"]
+COPY docker/README.md /codeBase/

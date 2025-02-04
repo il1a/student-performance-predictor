@@ -1,10 +1,9 @@
+# File: docker/images/activationBase/Dockerfile
 FROM busybox
 
 # Create necessary directory
-RUN mkdir -p /tmp/activationBase
+RUN mkdir -p /activationBase
 
-COPY data/processed/activation_data.csv /tmp/activationBase/
+COPY data/processed/activation_data.csv /activationBase/
 
-COPY docker/README.md /tmp/activationBase/
-
-CMD ["sh", "-c", "echo 'activationBase_student-performance-predictor image is ready.' && tail -f /dev/null"]
+COPY docker/README.md /activationBase/
