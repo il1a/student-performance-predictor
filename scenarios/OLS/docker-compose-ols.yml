@@ -1,7 +1,7 @@
 # File: scenarios/ANN/docker-compose-ols.yml
 services:
   learning_base:
-    image: ilia-elisa/learning-base-student-performance-predictor:v1.0
+    image: il1aa/learning-base-student-performance-predictor:v1.0
     volumes:
       - ai_system:/tmp
     command:
@@ -11,7 +11,7 @@ services:
         rm -rf /tmp/learningBase/ && cp -r /learningBase/ /tmp/;
 
   knowledge_base:
-    image: ilia-elisa/knowledge-base-student-performance-predictor:v1.0
+    image: il1aa/knowledge-base-student-performance-predictor:v1.0
     volumes:
       - ai_system:/tmp
     command:
@@ -21,7 +21,7 @@ services:
         rm -rf /tmp/knowledgeBase/ && cp -r /knowledgeBase/ /tmp/;
 
   activation_base:
-    image: ilia-elisa/activation-base-student-performance-predictor:v1.0
+    image: il1aa/activation-base-student-performance-predictor:v1.0
     volumes:
       - ai_system:/tmp
     command:
@@ -31,7 +31,7 @@ services:
         rm -rf /tmp/activationBase/ && cp -r /activationBase/ /tmp/;
 
   code_base:
-    image: ilia-elisa/code-base-student-performance-predictor:v1.0-amd64
+    image: il1aa/code-base-student-performance-predictor:v1.0-amd64
     volumes:
       - ai_system:/tmp
     depends_on:
