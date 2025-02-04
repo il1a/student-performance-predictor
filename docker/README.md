@@ -31,9 +31,9 @@ You can pull that image with the following command : `docker pull ilia-elisa/cod
 You can test both ANN and OLS models by doing the following : <br>
 1. Pull **all** the images using the `docker pull` commands described above <br><br>
 2. Create an external local volume _ai_system_ by running the following command on your machine : `docker volume create --name ai_system` <br><br>
-3. To test the ANN model please save the following docker compose .yml file locally : ... <br> 
+3. To test the ANN model please save the following docker compose .yml file locally : [ANN](https://github.com/il1a/student-performance-predictor/blob/main/scenarios/ANN/docker-compose-ann.yml) <br> 
 And then run it with : `docker compose -f docker-compose-ann.yml up` <br><br>
-4. To test the OLS model please save the following docker compose .yml file locally : ... <br>
+4. To test the OLS model please save the following docker compose .yml file locally : [OLS](https://github.com/il1a/student-performance-predictor/blob/main/scenarios/OLS/docker-compose-ols.yml) <br>
 And then run it with : `docker compose -f docker-compose-ols.yml up` <br><br>
 
 >DISCLAIMER! Please be informed that not all the docker images are required for testing, namely the *learning base* image is not needed as it's simply included for project transparency reasons. If you wish to re-train the models from scratch please refer to our project GitHub repository mentioned above.
