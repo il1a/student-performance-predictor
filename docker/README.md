@@ -16,15 +16,18 @@ Contains two .csv files with training and testing data.
 You can pull that image with the following command : `docker pull il1aa/learning-base-student-performance-predictor:v1.0`
 
 >The *learning base* docker image is not required for testing! It's simply included for project transparency reasons.
----
+---  
+
 ###### activation-base-student-performance-predictor
 Contains one .csv file with the activation data (one random data sample).  
 You can pull that image with the following command : `docker pull il1aa/activation-base-student-performance-predictor:v1.0`
----
+---  
+
 ###### knowledge-base-student-performance-predictor
 Contains two trained model files (.keras and .pkl) and their performance metrics.  
 You can pull that image with the following command : `docker pull il1aa/knowledge-base-student-performance-predictor:v1.0`
----
+---  
+
 ###### code-base-student-performance-predictor
 Contains two python scripts for testing both trained models with activation data.  
 You can pull that image with the following command : `docker pull il1aa/code-base-student-performance-predictor:v1.0-amd64`

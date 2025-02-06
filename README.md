@@ -41,6 +41,10 @@ AIBAS-student-performance-predictor/
             ├── plots/ # Generated plots
             ├── reports/ # Reports with model performance metrics
             ├── trained_models/ # Trained OLS and AI models
+            
+    ├── scenarios/ # Two docker compose files dedicated for testing each model with activation data
+            ├── ANN/
+            ├── OLS/ 
 ```
 
 ## Dataset
@@ -48,12 +52,18 @@ AIBAS-student-performance-predictor/
 We use the _Student Performance Factors_ dataset sourced from Kaggle: [Student Performance Factors](https://www.kaggle.com/datasets/lainguyn123/student-performance-factors/data).<br>
 This dataset contains synthetically generated student records with features like study time, family background, health, and other various exam performance relevant characteristics.
 
-## How to Use
+## How to re-train the models locally
 
 1. Clone this repository: `git clone https://github.com/il1a/student-performance-predictor`
 2. Navigate to the project directory: `cd student-performance-predictor`
-3. Install dependencies: `pip install -r requirements.txt`<br><br>
-   The rest of the steps is **coming soon** ...
+3. Install dependencies either using pip: `pip install -r requirements.txt` or using conda: `conda env create -f conda.yml`
+4. Navigate to the data_pipeline folder and either run all the cells in the notebook or run .py scripts instead in the following order: data_scraping.py -> data_preprocessing.py -> data_splitting.py
+5. Finally navigate to the models folder and either run all the cells in the notebook or run separate model scripts ANN.py and OLS.py (order doesn't matter)
+
+## How to test our trained models using Docker
+You can test our models using our dedicated docker workflow that includes custom docker images and activation scripts.  
+Testing is performed by loading each of the trained models and giving it a single activation data entry (random test data sample) and examining the final predictions of both models.
+In order to do that please refer to our README file located in the designated docker folder : [Docker README](https://github.com/il1a/student-performance-predictor/tree/main/docker)
 
 ## Licensing
 
