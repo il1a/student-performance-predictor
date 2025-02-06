@@ -4,7 +4,7 @@
 Project GitHub repository : https://github.com/il1a/student-performance-predictor
 
 ### Project Overview
-This docker image is part of the course _Advanced AI-based Application Systems_ course taught by M. Grum at the University of Potsdam, Germany.  
+These docker images are part of the course _Advanced AI-based Application Systems_ course taught by M. Grum at the University of Potsdam, Germany.  
 The project focuses on analyzing factors affecting student performance using both AI-based model (via TensorFlow) and a traditional OLS (Ordinary Least Squares) regression model.  
 The project adheres to the guidelines set by the course to ensure reproducibility and transparency.
 
