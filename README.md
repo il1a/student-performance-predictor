@@ -63,7 +63,7 @@ This dataset contains synthetically generated student records with features like
 ## How to test our trained models using Docker
 You can test our models using our dedicated docker workflow that includes custom docker images and activation scripts.  
 Testing is performed by loading each of the trained models and giving it a single activation data entry (random test data sample) and examining the final predictions of both models.
-In order to do that please refer to our README file located in the designated docker folder : [Docker README](https://github.com/il1a/student-performance-predictor/tree/main/docker)
+In order to do that please refer to our README file located in the designated docker folder : [Docker README](https://github.com/il1a/student-performance-predictor/tree/main/docker/README.md)
 
 ## Licensing
 
