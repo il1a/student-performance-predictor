@@ -29,11 +29,10 @@ AIBAS-student-performance-predictor/
             ├── raw/ # Raw and scraoed datasets
             ├── processed/ # Cleaned and prepared datasets
 
-    ├── docs/ # Reports and other relevant documentation
-
     ├── docker/
             ├── images/ # Docker image folders for deployment
                       ├── activationBase/
+                      ├── codeBase/
                       ├── knowledgeBase/
                       ├── learningBase/
 
@@ -41,10 +40,10 @@ AIBAS-student-performance-predictor/
             ├── plots/ # Generated plots
             ├── reports/ # Reports with model performance metrics
             ├── trained_models/ # Trained OLS and AI models
-            
+
     ├── scenarios/ # Two docker compose files dedicated for testing each model with activation data
             ├── ANN/
-            ├── OLS/ 
+            ├── OLS/
 ```
 
 ## Dataset
@@ -61,6 +60,7 @@ This dataset contains synthetically generated student records with features like
 5. Finally navigate to the models folder and either run all the cells in the notebook or run separate model scripts ANN.py and OLS.py (order doesn't matter)
 
 ## How to test our trained models using Docker
+
 You can test our models using our dedicated docker workflow that includes custom docker images and activation scripts.  
 Testing is performed by loading each of the trained models and giving it a single activation data entry (random test data sample) and examining the final predictions of both models.
 In order to do that please refer to our README file located in the designated docker folder : [Docker README](https://github.com/il1a/student-performance-predictor/tree/main/docker/README.md)
